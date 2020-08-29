@@ -10,5 +10,13 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
-      waitTimeInMsWhenSyncEmpty: 0
-      enableSelfPreservation: false
+        #默认情况下，如果Eureka Server在一定时间内（默认90秒）没有接收到某个微服务实例的心跳，Eureka Server将会移除该实例。但是当网络分区故障发生时，微服务与Eureka Server之间无法正常通信，而微服务本身是正常运行的，此时不应该移除这个微服务，所以引入了自我保护机制
+      # 测试时关闭自我保护机制，保证不可用服务及时踢出
+      #Eureka自我保护机制，通过配置 eureka.server.enable-self-preservation来true打开/false禁用自我保护机制，默认打开状态，建议生产环境打开此配置
+      enable-self-preservation: false
+#      尚不明白
+      wait-time-in-ms-when-sync-empty: 0
+      #(从被通知服务失效)剔除失效服务间隔(默认60秒）--# 启用主动失效，并且每次主动失效检测间隔
+      eviction-interval-timer-in-ms: 1000
+#     提高自我保护机制的配置调节2，默认0.85
+      renewal-percent-threshold: 0.49

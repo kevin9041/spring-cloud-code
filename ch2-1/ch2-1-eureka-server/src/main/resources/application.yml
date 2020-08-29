@@ -7,6 +7,8 @@ spring:
 eureka:
   server:
     use-read-only-response-cache: false
+    # eureka server缓存readWriteCacheMap失效时间，这个只有在这个时间过去后缓存才会失效，失效前不会更新，过期后从registry重新读取注册服务信息，registry是一个ConcurrentHashMap。
+    # 由于启用了evict其实就用不太上改这个配置了
     response-cache-auto-expiration-in-seconds: 10
 management:
   endpoints:

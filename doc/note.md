@@ -18,5 +18,18 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
     </properties>
 
-4.![Image text](euraka_api.png)
+4.eureka api:
+    ![Image text](https://github.com/kevin9041/spring-cloud-code/blob/feature/whb_20081616_selfversion/doc/image/eureka_api.png)
+
+5.eureka 的核心类
+    ![Image text](./image/eureka_core_instanceinfo.png)
+    ![Image text](./image/eureka_core_leaseinfo.png)
+    ![Image text](./image/eureka_core_serviceinstance.png)
+    InstanceStatus,用于标记服务实例的状态，其中OUT_OF_SERVICE,经常用于升级部署
+    ![Image text](./image/eureka_core.png),重点：LeaseManager和LookupService
+
+6.Regin和Zone的设计
+    资源在regin之间默认不会复制，因此eureka的高可用主要在于regin下面的zone
+    一个zone可以设置多个eureka server实例，他们之间构成peer节点，采用peer to peer的复制模式；由于eureka client支持preferSameZone(eureka server集群条件下也可以看作是一个eureka client)，eureka server 的serviceUrl会优先拉去跟其自身实例同zone的eureka server的地址列表
+
 

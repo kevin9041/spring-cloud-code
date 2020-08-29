@@ -3,9 +3,19 @@ server:
 
 spring:
   application:
-    name: demo-client1
+      name: demo-client1
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+#      配置client端拉去server注册信息的频率，默认30秒（新上线一个服务，1秒注册）
+    registry-fetch-interval-seconds: 1
+  instance:
+    ip-address: localhost
+    prefer-ip-address: true
+    #     提高自我保护机制的配置调节1，默认0.85
+    #每间隔1s，向服务端发送一次心跳，证明自己依然”存活“(默认30秒）
+    lease-renewal-interval-in-seconds: 1
+    #告诉服务端，如果我3s之内没有给你发心跳，就代表我“死”了，将我踢出掉(默认90秒
+    lease-expiration-duration-in-seconds: 3
