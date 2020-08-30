@@ -12,9 +12,15 @@
 	<description>ch3-1</description>
 
 	<modules>
-		<module>ch3-1-config-server</module>
-		<module>ch3-1-eureka-server</module>
-		<module>ch3-1-eureka-client</module>
+		<module>ch3-1-1/ch3-1-1-config-server</module>
+		<module>ch3-1-1/ch3-1-1-eureka-server</module>
+		<module>ch3-1-1/ch3-1-1-eureka-client</module>
+		<module>ch3-1-2/ch3-1-2-config-server</module>
+		<module>ch3-1-2/ch3-1-2-eureka-server</module>
+		<module>ch3-1-2/ch3-1-2-eureka-client</module>
+		<module>ch3-1-3/ch3-1-3-config-server</module>
+		<module>ch3-1-3/ch3-1-3-eureka-server</module>
+		<module>ch3-1-3/ch3-1-3-eureka-client</module>
 	</modules>
 
 	<parent>
@@ -44,10 +50,16 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<!--actuator 和config 才会暴露refresh端点 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

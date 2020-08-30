@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/ # two eureka server register each other
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+      enableSelfPreservation: false
