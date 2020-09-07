@@ -1,0 +1,11 @@
+1..\keytool -genkeypair -alias server-storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ‘D:\projects\spring-cloud-code\ch3-5\ch3-5-eureka-server\src\main\resources\selftest\server.p12' -validity 3650
+2..\keytool -genkeypair -alias client -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ‘D:\projects\spring-cloud-code\ch3-5\ch3-5-eureka-server\src\main\resources\selftest\client.p12' -validity 3650
+
+-- 没有成功 这一步直接复制现有项目文件
+3..\keytool -export -alias client -file server.crt --keystore D:\projects\spring-cloud-code\ch3-5\ch3-5-eureka-server\src\main\resources\selftest\server.p12
+4..\keytool -export -alias client -file client.crt --keystore D:\projects\spring-cloud-code\ch3-5\ch3-5-eureka-server\src\main\resources\selftest\client.p12
+
+
+
+后面的步骤也不验证了 太tm烦了，用的时候再验证
+

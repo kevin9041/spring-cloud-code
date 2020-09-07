@@ -15,7 +15,6 @@
 
     <modules>
         <module>ch4-1-gzip</module>
-        <module>ch4-1-hello</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
