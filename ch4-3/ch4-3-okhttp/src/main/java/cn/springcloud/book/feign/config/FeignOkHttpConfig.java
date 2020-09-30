@@ -25,6 +25,7 @@ public class FeignOkHttpConfig {
                 .writeTimeout(60,TimeUnit.SECONDS)
                 //是否自动重连
                 .retryOnConnectionFailure(true)
+                //请求相关对象连接池
                 .connectionPool(new ConnectionPool())
                 //构建OkHttpClient对象
                 .build();
