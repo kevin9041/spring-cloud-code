@@ -1,5 +1,6 @@
 server:
   port: 8012
+
 spring:
   application:
     name: ch4-6-provider
