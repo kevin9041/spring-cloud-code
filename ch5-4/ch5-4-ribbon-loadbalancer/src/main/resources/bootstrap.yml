@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ribbon-loadbalancer
+server:
+  port: 7777
+
+ribbon:
+  eureka:
+    enabled: false
+
+client:
+  ribbon:
+    listOfServers: http://localhost:7070,http://localhost:7071
