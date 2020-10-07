@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.springcloud.book</groupId>
-    <artifactId>code</artifactId>
+    <artifactId>spring-cloud-code</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>chapter</name>
+    <name>spring-cloud-code</name>
     <url>http://springcloud.cn</url>
 
     <properties>
@@ -30,7 +30,7 @@
         <module>ch5-1</module>
         <module>ch5-2</module>
         <module>ch5-3</module>
-        <module>ch5-4</module>
+        <module>ch5-4-fuck</module>
 
         <module>ch6-1</module>
         <module>ch6-2</module>

@@ -1,7 +1,5 @@
 package cn.springcloud.book.hystrix;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -16,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
-public class HystrixThreadContextApplication {
+public class HystrixThreadContextApplication {//高級 看不懂那種高級
 
 	@Bean
 	@LoadBalanced

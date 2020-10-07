@@ -33,7 +33,7 @@ class GroovyFilter extends ZuulFilter {
 			String value = request.getHeader(name)
 			println("header: " + name + ":" + value)
 		}
-		println("This is Groovy Filter!")
+		println("This is Groovy Filter --22222222--!")
 		return null
 	}
 }

@@ -40,7 +40,7 @@ public class ExceptionController {
     }
     
     @GetMapping("/getFallbackMethodTest")
-    @HystrixCommand
+    @HystrixCommand(fallbackMethod = "fallback")
     public String getFallbackMethodTest(String id){
     	throw new RuntimeException("getFallbackMethodTest failed");
     }

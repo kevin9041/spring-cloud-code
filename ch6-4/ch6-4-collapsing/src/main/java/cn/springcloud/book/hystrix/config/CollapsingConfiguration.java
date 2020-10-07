@@ -22,6 +22,7 @@ public class CollapsingConfiguration {
     public class WebMvcConfig extends WebMvcConfigurerAdapter {
         @Autowired
         HystrixContextInterceptor userContextInterceptor;
+
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
             registry.addInterceptor(userContextInterceptor);

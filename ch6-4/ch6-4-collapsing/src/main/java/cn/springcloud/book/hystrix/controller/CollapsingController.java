@@ -1,17 +1,14 @@
 package cn.springcloud.book.hystrix.controller;
 
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
+import cn.springcloud.book.hystrix.service.ICollapsingService;
+import cn.springcloud.book.provider.model.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
-
-import cn.springcloud.book.hystrix.service.ICollapsingService;
-import cn.springcloud.book.provider.model.Animal;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @RestController
 public class CollapsingController {
@@ -35,7 +32,7 @@ public class CollapsingController {
 	}
 	
 	/**
-	 * 返回值必须是Future，否则不会进行合并/聚合
+	 * 【返回值必须是Future，否则不会进行合并/聚合】
 	 * @return
 	 * @throws ExecutionException
 	 * @throws InterruptedException
